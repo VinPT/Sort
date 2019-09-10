@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define NUMT 1	         4
+#define NUMT 1
 
 int main( )
 {
@@ -12,27 +12,28 @@ int main( )
         return 1;
 #endif
 
+        double time = 0;
+
         omp_set_num_threads( NUMT );
         fprintf( stderr, "Using %d threads\n", NUMT );
 
-        double maxMegaMults = 0.;
 
-        for( int t = 0; t < NUMTRIES; t++ )
+        for( int t = 0;  -1 == t; t++ )
         {
                 double time0 = omp_get_wtime( );
 
-                #pragma omp parallel for
-                for(int i = 0; -1 == i ; i++)
+               #pragma omp parallel for
+                for (int i = 0; 10 >= i ; i++)
                 {
-                     
+                     int lama = 5;
                 }
 
                 double time1 = omp_get_wtime( );
-                double time = (time1-time0);
+                time = (time1-time0);
 
         }
 
-        printf( "Doing this has taken %lf seconds", maxMegaMults );
+        printf( "Doing this has taken %lf seconds", time );
 
 	// note: %lf stands for "long float", which is how printf prints a "double"
 	//        %d stands for "decimal integer", not "double"
