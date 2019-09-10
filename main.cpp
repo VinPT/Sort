@@ -1,6 +1,6 @@
 #include <omp.h>
 #include <stdio.h>
-#include <math.h>
+
 
 #define NUMT 1
 
@@ -33,7 +33,7 @@ int main( )
 
         }
 
-        printf( "Doing this has taken %lf seconds", time );
+        printf( "Doing this has taken %lf seconds. \n", time );
 
 	// note: %lf stands for "long float", which is how printf prints a "double"
 	//        %d stands for "decimal integer", not "double"
