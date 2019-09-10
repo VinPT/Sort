@@ -5,13 +5,13 @@ LDFLAGS = -g -fopenmp
 
 PROGRAM = main
 
-all:	${PROGRAM}.exe
+all:	${PROGRAM}
 
-${PROGRAM}.exe: ${PROGRAM}.o
-	${LD} ${LDFLAGS} $< -o ${PROGRAM}.exe
+${PROGRAM}: ${PROGRAM}.o
+	${LD} ${LDFLAGS} $< -o ${PROGRAM}
 
 ${PROGRAM}.o: ${PROGRAM}.cpp
 	${CC} ${CFLAGS} -c $< -o ${PROGRAM}.o
 
 clean:
-	rm -f ${PROGRAM}.o ${PROGRAM}.exe
+	rm -f ${PROGRAM}.o ${PROGRAM}
