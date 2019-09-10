@@ -1,2 +1,17 @@
-g++ -c main.cpp -o main.o -fopenmp
-g++ main.o -o sort -fopenmp -lpthread
+CC = /usr/bin/gcc
+CFLAGS = -g -O0 -fopenmp
+LD = /usr/bin/gcc
+LDFLAGS = -g -fopenmp
+
+PROGRAM = main
+
+all:	${PROGRAM}.exe
+
+${PROGRAM}.exe: ${PROGRAM}.o
+	${LD} ${LDFLAGS} $< -o ${PROGRAM}.exe
+
+${PROGRAM}.o: ${PROGRAM}.cpp
+	${CC} ${CFLAGS} -c $< -o ${PROGRAM}.o
+
+clean:
+	rm -f ${PROGRAM}.o ${PROGRAM}.exe
