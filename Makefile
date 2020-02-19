@@ -1,6 +1,6 @@
-CC = /usr/bin/gcc
+CC = /usr/bin/g++
 CFLAGS = -g -O0 -fopenmp
-LD = /usr/bin/gcc
+LD = /usr/bin/g++
 LDFLAGS = -g -fopenmp
 
 PROGRAM = main
